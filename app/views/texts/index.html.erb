@@ -1,0 +1,24 @@
+<h1>Word Sequence Finder</h1>
+
+<h3>Select a Pre-loaded file:</h3>
+<% @files.each do |file| %>
+    <div><%= link_to file, text_path(file) %></div>
+<% end %>
+
+<h3>Upload your own .txt file:</h3>
+<%= form_with url: "/texts", method: :post do |form| %>
+    <div class="field">
+        <%= form.file_field :files%>
+    </div>
+    <div class="actions">
+        <%= form.submit "Find sequences"%>
+    </div>
+<% end %>
+
+<% if @selected_file %>
+    <h3>Most common 3 word sequences for <%=@selected_file%>:</h3>
+
+    <% (@sequences || []).each do |sequence, count| %>
+        <div><%= sequence %> - <%= count %></div>
+    <% end %>
+<% end %>
