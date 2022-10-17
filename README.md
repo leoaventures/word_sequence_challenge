@@ -6,18 +6,25 @@ This app can scan one or more text files to find the most 100 most common 3 word
 ### Setup
 This app can be run in 3 ways. There are two text files in the /text folder.
 1. **Ruby command line**
+
 One file: `ruby ./solution.rb texts/moby_dick.txt`
+
 Multiple files: `ruby solution.rb texts/moby-dick.txt texts/brothers-karamazov.txt`
 
 2. **STDIN**
+
 One file: `cat texts/moby-dick.txt | ruby solution.rb`
+
 Multiple files: `cat texts/*.txt | ruby solution.rb`
 
 3. **Rails App**
 - There is a bonus rails app that runs on Ruby 3.1.2 & Rails 6.1.7
 - This provides a graphical interface to view results from the pre-loaded text files or upload a new text file
+
 `bundle install`
+
 `rails s`
+
 `open http://localhost:3000/ in browser`
 
 ### Structure
@@ -31,7 +38,9 @@ Multiple files: `cat texts/*.txt | ruby solution.rb`
 - Unit tests are written in RSpec.
 - These the text formatting logic (removing unwanted characters, etc.) as well as the filtering logic to find the most frequent word sequences.
 - Use the `rspec` command to run the tests.
+
 `bundle install`
+
 `rspec`
 
 ### What would I do next?
